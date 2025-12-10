@@ -16,9 +16,9 @@ Setting up and configuring machines in a network:
 Do this as many times as needed (might not be needed skip for now)
 
 ```
-sudo groupadd (groupname)
-sudo adduser (username)
-sudo usermod -a -G (groupname) (username)
+sudo groupadd {groupname}
+sudo adduser {username}
+sudo usermod -a -G {groupname} {username}
 ```
 ### Setting up the File Server on the *Server* Machine
 
