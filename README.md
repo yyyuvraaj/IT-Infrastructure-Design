@@ -76,7 +76,7 @@ I will create a new [sharename] called [testshare] in the smb.conf file with som
            path = /home/clientshare
 	   read only = no
 ```
-Once that is made we will need to test using testparm again to see that the configurations are saved and set.
+Once that is made we will need to test using testparm again to see that the configurations are saved and set. It should output something similar to this.
 ```
 testparm
 Load smb config files from /etc/samba/smb.conf
@@ -106,6 +106,7 @@ Press enter to see a dump of your service definitions
 	read only = No
 
 ```
+Now that we have a Shared Folder set up on the *Server Machine*.
 
 
 
