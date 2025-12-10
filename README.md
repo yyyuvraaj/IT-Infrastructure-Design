@@ -16,8 +16,8 @@ Setting up and configuring machines in a network:
 ### Creating groups to apply (Principle of Least Priviledge)
 Do this as many times as needed (might not be needed skip for now)
 
-'''
+```
 sudo groupadd (groupname)
 sudo adduser (username)
 sudo usermod -a -G (groupname) (username)
-'''
+```
