@@ -93,7 +93,7 @@ Press enter to see a dump of your service definitions
         map to guest = Bad User
 	usershare allow guests = Yes 	# <-- can change this if needed
 	idmap config * : backend = tdb
-	hosts allow = 192.168.0.0/16
+	hosts allow = 192.168.100.0/24
 	hosts deny = 0.0.0.0/0
 
 
