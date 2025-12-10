@@ -109,7 +109,7 @@ Press enter to see a dump of your service definitions
 Now that we have a Shared Folder set up on the *Server Machine*.
 
 
-
+https://www.baeldung.com/linux/file-server-smb-nfs
 
 
 
