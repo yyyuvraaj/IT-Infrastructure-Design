@@ -3,23 +3,35 @@ This is a repository to simulate an IT Infrastructure I've designed.
 
 # Creating a System Infrastructure
 
+Ubuntu Server 24.04 LTS
+https://ubuntu.com/download/server
 
-## Phase 1:
-Getting VM's needed
+hostnames: node1, node2, webserver
+passwords are the same as the names of the servers for simplicity!
+
+## Phase 1
+(ADD IMAGE OF TOPOLOGY HERE)
 
 ## Phase 2:
 
-(ADD image here)
-Setting up and configuring machines in a network:
-
-### Creating groups to apply (Principle of Least Priviledge)
-Do this as many times as needed (might not be needed skip for now)
+### Set up a GlusterFS Cluster (BOTH VMS)
 
 ```
-sudo groupadd {groupname}
-sudo adduser {username}
-sudo usermod -a -G {groupname} {username}
+sudo apt update && sudo apt upgrade -y
+
+sudo apt install glusterfs-server -y
+sudo systemctl start glusterd
+sudo systemctl enable glusterd
 ```
+
+We will also need to create a directory for the storage
+```
+sudo mkdir -p /data/brick1/gv0
+```
+
+
+
+
 ### Setting up the File Server on the *Server* Machine
 
 I will be using Samba over NFS due to it's compatability with both windows and linux clients, and many other advantageous.
