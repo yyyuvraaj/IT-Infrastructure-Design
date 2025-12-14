@@ -211,7 +211,7 @@ From another Linux machine (or another VM):
 ```bash
 sudo apt install smbclient -y
 smbclient //192.168.1.151/testshare -U smbuser
-# Then test with ls, put, get, etc.
+# Then test with ls, put, get, pull if needed
 
 smbclient //192.168.1.152/testshare -U smbuser
 ```
@@ -285,13 +285,13 @@ server {
     listen 80;
     server_name _;
 
-    root /mnt/glusterfs/clientshare;
+    root /mnt/glusterfs/clientshare; # make sure this is actaully the correct directory
     autoindex on;
     autoindex_exact_size off;
     autoindex_localtime on;
 
     location / {
-        # No try_files; just list directory contents
+        try_files $uri $uri/ =404;
     }
 }
 ```
@@ -349,13 +349,5 @@ You should see a directory listing of the files in `/mnt/glusterfs/clientshare`.
      - `smbclient //192.168.1.152/testshare -U smbuser`
      - `http://<webserver-ip>/`
    - Files should still be available via node2.
-
-Take screenshots of:
-- `gluster volume info`
-- `testparm` output
-- `smbclient` session
-- Browser showing directory listing
-
-These will be useful evidence for your report and testing section.
 
 ---
