@@ -1,4 +1,7 @@
 # IT-Infrastructure-Design
+
+# PLEASE MAKE IPs STATIC BEFORE CONTINUING (staticIP_config.txt)
+
 This is a repository to simulate an IT Infrastructure I've designed.
 
 ## Creating a System Infrastructure
