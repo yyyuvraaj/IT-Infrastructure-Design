@@ -1,4 +1,4 @@
-# IT-Infrastructure-Design
+# IT-Infrastructure-Design (WORK IN PROGRESS)
 
 ## PLEASE MAKE IPs STATIC BEFORE CONTINUING (staticIP_config.txt)
 
