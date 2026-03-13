@@ -1,0 +1,24 @@
+## Implementation in GNS3 with VMware
+
+To better visualise and demonstrate the designed infrastructure, the file server cluster and web server were also implemented inside a GNS3 topology using existing VMware virtual machines.
+
+Three Ubuntu Server 24.04 LTS VMs were created in VMware Workstation:
+
+- **node1** – GlusterFS + Samba file server (192.168.1.151)
+- **node2** – GlusterFS + Samba file server (192.168.1.152)
+- **webserver** – Nginx web server, mounting the GlusterFS volume (192.168.1.153)
+
+These VMs were then imported into GNS3 as separate VMware VM nodes via:
+
+- `Edit → Preferences → VMware VMs → New → Add an existing virtual machine`
+
+Each VM was configured to allow GNS3 to control its network adapter. In the GNS3 project, the three VMware nodes were placed on the canvas and connected to a virtual Ethernet switch, representing a shared Layer 2 network segment. The VMs retained their static IP addressing (192.168.1.151–153/24), so no changes were required to the GlusterFS, Samba or Nginx configuration.
+
+From within GNS3, each VM can be started (right‑click → **Start**) and accessed via console. This allows live demonstration of:
+
+- GlusterFS volume status (`gluster volume info`)
+- Samba share access (`smbclient` from a client)
+- The replicated storage contents (`ls /mnt/glusterfs/clientshare`)
+- Web access to the shared files via the Nginx server (`http://webserver-ip/`)
+
+The GNS3 canvas provides a clear visual topology showing `node1`, `node2`, and `webserver` interconnected through a virtual switch. Screenshots of this topology, combined with console outputs and browser views, are used in the documentation to evidence both the logical design and the working implementation of the redundant file server and web server infrastructure.
